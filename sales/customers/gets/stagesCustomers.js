@@ -8,8 +8,8 @@ const stagesCustomers = () => {
         female: {
           $cond: {
             if: { $eq: ["$customer.gender", "F"] },
-            then: { $sum: 1 },
-            else: { $sum: 0 },
+            then: 1,
+            else: 0,
           },
         },
       },
@@ -22,8 +22,8 @@ const stagesCustomers = () => {
         male: {
           $cond: {
             if: { $eq: ["$customer.gender", "M"] },
-            then: { $sum: 1 },
-            else: { $sum: 0 },
+            then: 1,
+            else: 0,
           },
         },
       },
