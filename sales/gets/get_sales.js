@@ -1,7 +1,10 @@
 import { SALES_COLLECTION } from "../constants";
-import getClient from "../../mongo_middleware/index";
-import { MONGO_DB } from "../../mongo_middleware/constants";
+import getClient from "../../mongo_middleware/getClient";
+import dotenv from "dotenv";
 import stagesAggregate from "./stagesSales";
+
+dotenv.config();
+const MONGO_DB = process.env.MONGO_DB;
 
 const getSales = async (request, response) => {
   const client = getClient();
